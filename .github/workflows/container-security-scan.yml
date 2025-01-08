@@ -34,7 +34,7 @@ jobs:
 
       - name: Vulnerability scanner
         id: trivy
-        uses: aquasecurity/trivy-action@595be6a0f6560a0a8fc419ddf630567fc623531d
+        uses: aquasecurity/trivy-action@a11da62073708815958ea6d84f5650c78a3ef85b
         with:
           image-ref: hyperledger/besu:${{ steps.tag.outputs.TAG }}
           format: sarif
