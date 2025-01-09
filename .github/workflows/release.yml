@@ -210,7 +210,7 @@ jobs:
           mkdir -p docker/reports
           curl -L https://github.com/aelsabbahy/goss/releases/download/v0.4.4/goss-${{ steps.prep.outputs.PLATFORM_PAIR }} -o ./docker/tests/goss-${{ steps.prep.outputs.PLATFORM_PAIR }}
       - name: login to ${{ env.registry }}
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@327cd5a69de6c009b9ce71bce8395f28e651bf99
         with:
           registry: ${{ env.registry }}
           username: ${{ secrets.DOCKER_USER_RW }}
@@ -248,7 +248,7 @@ jobs:
         with:
           cache-disabled: true
       - name: login to ${{ env.registry }}
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@327cd5a69de6c009b9ce71bce8395f28e651bf99
         with:
           registry: ${{ env.registry }}
           username: ${{ secrets.DOCKER_USER_RW }}
@@ -284,7 +284,7 @@ jobs:
           java-version: 21
           cache: gradle
       - name: login to ${{ env.registry }}
-        uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d
+        uses: docker/login-action@327cd5a69de6c009b9ce71bce8395f28e651bf99
         with:
           registry: ${{ env.registry }}
           username: ${{ secrets.DOCKER_USER_RW }}
