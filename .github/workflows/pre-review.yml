@@ -116,19 +116,19 @@ jobs:
       - name: Split tests
         run: .github/workflows/splitTestsByTime.sh tmp/junit-xml-reports-downloaded "tmp/junit-xml-reports-downloaded/unit-.*-test-results" "build/test-results" ${{env.total-runners}} ${{ matrix.runner_index }} > testList.txt
       - name: Upload Timing
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         if: matrix.runner_index == 0
         with:
           name: unit-tests-timing
           path: 'tmp/timing.tsv'
       - name: Upload Lists
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         if: matrix.runner_index == 0
         with:
           name: unit-tests-lists
           path: 'tmp/*.list'
       - name: Upload gradle test tasks
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: testList-${{ matrix.runner_index }}.txt
           path: testList.txt
@@ -137,12 +137,12 @@ jobs:
       - name: Remove downloaded test results
         run: rm -rf tmp/junit-xml-reports-downloaded
       - name: Upload Unit Test Results
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: unit-${{matrix.runner_index}}-test-results
           path: '**/test-results/**/TEST-*.xml'
       - name: Upload Unit Test HTML Reports
-        uses: actions/upload-artifact@5d5d22a31266ced268874388b861e4b58bb5c2f3
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         if: success() || failure()
         with:
           name: unit-${{matrix.runner_index}}-test-html-reports
