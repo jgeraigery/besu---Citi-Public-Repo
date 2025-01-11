@@ -83,7 +83,7 @@ jobs:
           distribution: temurin
           java-version: 21
       - name: Download zip
-        uses: actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe
+        uses: actions/download-artifact@7fba95161a0924506ed1ae69cdbae8371ee00b3f
         with:
           pattern: besu-*.zip
           merge-multiple: true
@@ -106,7 +106,7 @@ jobs:
       contents: write
     steps:
       - name: Download archives
-        uses: actions/download-artifact@eaceaf801fd36c7dee90939fad912460b18a1ffe
+        uses: actions/download-artifact@7fba95161a0924506ed1ae69cdbae8371ee00b3f
         with:
           pattern: besu-*
           merge-multiple: true
