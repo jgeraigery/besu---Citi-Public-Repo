@@ -27,7 +27,7 @@ jobs:
         runner_index: [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
+        uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
         with:
           ref: ${{ github.event.pull_request.head.sha || github.ref }}
       - name: Set up Java
