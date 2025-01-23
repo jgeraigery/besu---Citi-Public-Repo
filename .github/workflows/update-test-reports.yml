@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get unit test reports from latest merged PR
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d
+        uses: dawidd6/action-download-artifact@20319c5641d495c8a52e688b7dc5fada6c3a9fbc
         with:
           workflow: pre-review.yml
           workflow_conclusion: success
@@ -33,7 +33,7 @@ jobs:
           name: unit-test-results
           path: 'unit-test-results/**/test-results/**/TEST-*.xml'
       - name: Get acceptance test reports from latest merged PR
-        uses: dawidd6/action-download-artifact@e7466d1a7587ed14867642c2ca74b5bcc1e19a2d
+        uses: dawidd6/action-download-artifact@20319c5641d495c8a52e688b7dc5fada6c3a9fbc
         with:
           workflow: acceptance-tests.yml
           workflow_conclusion: success
